@@ -5,11 +5,11 @@ import reducers from "../reducers";
 
 const makeStore = () => {
   // Create store
-  const store = createStore(reducers, composeWithDevTools());
+  const storeWrapper = createStore(reducers, composeWithDevTools());
 
   // Return store
-  return store;
+  return storeWrapper;
 };
 
 // export an assembled wrapper
-export const storeWrapper = createWrapper(makeStore, { debug: false });
+export const store = createWrapper(makeStore, { debug: false });
